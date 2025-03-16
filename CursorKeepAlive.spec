@@ -1,4 +1,6 @@
 # -*- mode: python ; coding: utf-8 -*-
+# type: ignore
+
 import os
 
 a = Analysis(
