@@ -49,7 +49,9 @@ class EmailVerificationHandler:
                         verify_code = self._get_mail_code_by_pop3()
                     if verify_code is not None:
                         return verify_code
-
+                code = input("自动获取验证码失败，请手动输入：").strip()
+                if code:
+                    return code
                 if attempt < max_retries - 1:  # 除了最后一次尝试，都等待
                     logging.warning(f"未获取到验证码，{retry_interval} 秒后重试...")
                     time.sleep(retry_interval)
